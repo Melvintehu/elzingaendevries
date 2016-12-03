@@ -8,6 +8,7 @@ use App\Http\Requests;
 // models
 use App\Project;
 use App\Discipline;
+use App\Tag;
 
 class ProjectController extends Controller
 {
@@ -46,7 +47,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        Project::create($request->all());
+        Project::create($request->all())->addTags($request->get('tagNames'));
         return redirect('cms/project');
     }
 

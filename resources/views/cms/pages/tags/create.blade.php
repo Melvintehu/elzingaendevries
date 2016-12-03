@@ -1,7 +1,7 @@
 @extends('cms.master')
 
 @section('title')
-    Project toevoegen    
+    Projecttag toevoegen    
 @stop
 
 @section('content')
@@ -10,29 +10,21 @@
 
     <div class="row">
         <div class="col-lg-12"> 
-           
-            
             <hr>
-            <div class="row">
-                    
-                    <div class="col-md-12">
-
-                        <div class="panel panel-default">
-                           
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                       
-                                        <div class="table-responsive">
-                                            {!! Form::open(['method' => 'POST', 'action' => 'ProjectController@store' ]) !!}
-                                                
-                                                <table class="table table-hover">
-                                                    <tbody>
-                                                    
-                                                        <tr>
-                                                           <td>
-                                                                {!! Form::label('name', ' De naam van het project ') !!} 
-                                                                {!! Form::text('name', null, ['required'=>'true', 'class' => 'form-control']); !!} 
+            <div class="row">                 
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="table-responsive">
+                                        {!! Form::open(['method' => 'POST', 'action' => 'ProjectController@store' ]) !!}
+                                            <table class="table table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            {!! Form::label('name', ' De naam van het project ') !!} 
+                                                            {!! Form::text('name', null, ['required'=>'true', 'class' => 'form-control']); !!} 
                                                            </td>
                                                         </tr>
                                                         <tr>

@@ -28,6 +28,7 @@ class TagController extends Controller
      */
     public function create()
     {
+        
         return view('cms.pages.tags.create');
     }
 

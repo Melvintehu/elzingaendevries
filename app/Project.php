@@ -33,4 +33,18 @@ class Project extends Model
     	return $this->belongsTo('App\Discipline');
     }
 
+    /**
+     * Add a array of tags to a project
+     * @return type void
+     */
+    public function addTags($arrayOfTags)
+    {
+        foreach($arrayOfTags as $tagName){
+            $tag = new Tag;
+            $tag->name = $tagName;
+            $tag->project_id = $this->id;
+            $tag->save();
+        }
+    }
+
 }

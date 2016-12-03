@@ -17,6 +17,5 @@
 <!-- Dashboard -->
 <script src="{{ URL::asset("js/jquery.dashboard.js") }}"></script>
 
-
 <!-- Vue.js -->
 <script src="{{ URL::asset("js/vue.js") }}"></script>

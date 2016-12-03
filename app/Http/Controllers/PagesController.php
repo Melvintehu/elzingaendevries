@@ -120,15 +120,11 @@ class PagesController extends Controller
 
 	protected function getProjects($discipline)
 	{	
-
 		$discipline = Discipline::where('name', $discipline)->first();
-
 		if ($discipline == "") {
-   			return Project::all();
-   		}
-   		
-   		return Project::where('discipline_id', $discipline->id)->get();
-   		
+			return Project::all();
+   	}
+		return Project::where('discipline_id', $discipline->id)->get();	
 	}
    			
 	/**
