@@ -45,19 +45,15 @@
 							  max-height-xs
 							 
 					">
-
 						{{ str_limit($project->description, 220)}}
 					</p>
-
 					<div class="divider bg-accent"></div>
-
 					<a class="btn-round
 							  right 
 							  space-inside-xs 
 							  space-inside-sides-xs" 
 							  href="/project/{{$project->id}}/{{strtolower($project->name)}}"
 					> 
-
 						<span class="circle 
 									 circle-sm 
 									 xs-circle-xs
