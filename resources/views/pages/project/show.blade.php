@@ -105,7 +105,7 @@
 					"> {{ $tag['name'] }} </p>
 
 				@endForeach
-
+				<div>new feature</div>
 				<div style="height:4px;" class="divider bg-accent space-outside-up-sm"></div>
 				<div class="row">
 					<div class="col-lg-8">
