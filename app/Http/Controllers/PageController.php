@@ -47,24 +47,9 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $files = File::allFiles(trim(base_path() . '/resources/views/pages/ '));
+        $directory = "/resources/views/pages";        
+        Page::createFromDirectory($directory);
 
-        foreach ($files as $file) {
-           
-            $pageName = str_replace('.blade.php', '', $file->getFilename());
-
-            $filepath = trim(base_path() . '/resources/views/pages/ ');
-
-            if ($file->getPath() == $filepath && count(Page::where('name', $pageName)->get()) == 0 ) {
-
-                Page::create(['name' => $pageName ]);                
-            }
-
-
-            
-        }
-        
         return redirect('cms/page');
     }
 
@@ -79,59 +64,6 @@ class PageController extends Controller
         //
     }
 
-    protected function getFileContents($page_id)
-    {
-        $pageFile = Page::where('id', $page_id)->first();
-        $filePath = trim(base_path() . '\resources\views\pages\ '); 
-        $filename = $filePath . $pageFile->name . '.blade.php';
-
-
-
-
-        if ( !file_exists( $filename ) ) {
-            return "";
-        }
-
-       
-
-        return File::get($filename);
-    }
-
-    protected function getAvailablePositions($page_id)
-    {
-        $contents = $this->getFileContents($page_id);
-
-        if ($contents == "") {
-
-            return 0;
-
-        }
-
-
-        $numberOfSections = substr_count($contents, 'text-inject'); 
-
-        $sections = Section::where([
-                ['page_id', '=', $page_id]
-            ])->get();
-
-
-        $positionsAvailable = [];
-        $positionsTaken = [];
-
-        foreach($sections as $section)
-        {
-            array_push($positionsTaken, $section->page_position);
-        }
-
-        for($i = 0; $i <= $numberOfSections; $i++)
-        {
-            if(!in_array($i, $positionsTaken) || $i == 0){
-                $positionsAvailable[$i] = $i;
-            }
-        }
-
-        return $positionsAvailable;
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -141,17 +73,17 @@ class PageController extends Controller
      */
     public function edit($id)
     {
+        $page = Page::find($id);
+        $sectionSlots = $page->availableSlots();
 
-        $positionsAvailable = $this->getAvailablePositions($id);
-
-        if ( $positionsAvailable == 0 ) {
+        if ( $sectionSlots->isEmpty() ) {
             return redirect('cms/page/create');
         }
 
         $data = [
             'page' => Page::find($id),
             'pages' => Page::pluck('name', 'id'),
-            'page_positions' => $positionsAvailable,
+            'page_positions' => $sectionSlots->pluck('position', 'position'),
         ];
 
         return view('cms.pages.pages.update', compact('data'));

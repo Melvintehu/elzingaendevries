@@ -11,8 +11,8 @@ use App\Http\Requests;
 
 use App\Page;
 use App\Section;
-use App\Template;
 use File;
+
 class SectionController extends Controller
 {
     /**
@@ -40,9 +40,7 @@ class SectionController extends Controller
 
 
         $data = [
-            'pages' => Page::pluck('name', 'id'),
-            'templates' => Template::pluck('name', 'id'),
-             
+            'pages' => Page::pluck('name', 'id'),             
         ];
 
         return view('cms.pages.sections.create', compact('data'));
@@ -80,50 +78,14 @@ class SectionController extends Controller
      */
     public function edit($id)
     {
-
-
-        $sectionToUpdate = Section::find($id);
-        $pageFile = Page::where('id', $sectionToUpdate->page_id)->first();
-        $filePath = trim(base_path() . '\resources\views\pages\ '); 
-        $filename = $filePath . $pageFile->name . '.blade.php';
-
-        $contents = File::get($filename);
-        $numberOfSections = substr_count($contents, 'text-inject'); 
-
-        $sections = Section::where([
-                ['page_id', '=', $sectionToUpdate->page_id]
-            ])->get();
-
-        $positionsAvailable = [];
-        $positionsTaken = [];
-
-        foreach($sections as $section)
-        {
-            array_push($positionsTaken, $section->page_position);
-        }
-
-
-        for($i = 0; $i <= $numberOfSections; $i++)
-        {
-            if(!in_array($i, $positionsTaken) || $i == 0){
-                
-                $positionsAvailable[$i] = $i;
-            }
-
-            if($i == $sectionToUpdate->page_position){
-                $positionsAvailable[$i] = $i;
-            }
-        }
+        $section = Section::find($id);
+        $sectionSlots = $section->page->availableSlots();
         
-
         $data = [
-            'section' => $sectionToUpdate,
-            'pages' => Page::pluck('name', 'id'),
-            'templates' => Template::pluck('name', 'id'),
-            'page_positions' => $positionsAvailable,
+            'section' => $section,
+            'templates' => $section->getAllTemplates(),
+            'page_positions' => $sectionSlots->pluck('position', 'position'),
         ];
-
-
 
         return view('cms.pages.sections.update', compact('data'));
     }

@@ -9,15 +9,13 @@
     <hr>
 
     <div class="row">
-        <div class="col-lg-12"> 
-            
+        <div class="col-lg-12">             
             <hr>
             <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                           
-                            <div class="panel-body">
-                                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-default">       
+                        <div class="panel-body">
+                        </div>
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         
@@ -32,35 +30,38 @@
                                                 !!}
                                                     <thead>
                                                         <tr>
-                                                               <td>
-                                                                    {!! Form::label('title', ' De titel die weergegeven wordt op de website ') !!} 
-                                                                    {!! Form::text('title', null, ['class' => 'form-control']); !!} 
-                                                               </td>
-                                                            </tr>
-                                                            <tr>
-                                                               <td>
-                                                                    {!! Form::label('body', ' De text die weergegeven wordt op de website ') !!} 
-                                                                    {!! Form::textarea('body', null, ['class' => 'form-control']); !!} 
-                                                               </td>
-                                                            </tr>
-                                                           
-                                                            <tr>
                                                            <td>
-                                                                {!! Form::label('template_id', 'Welke template ?') !!} 
-                                                                {!! Form::select('template_id', $data['templates'], null, ['class' => 'form-control']); !!} 
+                                                                {!! Form::label('title', ' De titel die weergegeven wordt op de website ') !!} 
+                                                                {!! Form::text('title', null, ['class' => 'form-control']); !!} 
                                                            </td>
                                                         </tr>
-
                                                         <tr>
-                                                            
+                                                           <td>
+                                                                {!! Form::label('body', ' De text die weergegeven wordt op de website ') !!} 
+                                                                {!! Form::textarea('body', null, ['class' => 'form-control']); !!} 
+                                                           </td>
+                                                        </tr>
+                                                       <tr>
+                                                           <td>
+                                                                {!! Form::label('template', ' De text die weergegeven wordt op de website ') !!} 
+                                                                {!! Form::select('template', $data['templates']->pluck('name'), null, ['class' => 'form-control']); !!} 
+                                                           </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <?php 
+                                                                    foreach($data['templates'] as $template) {
+
+                                                                    }
+                                                                ?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
                                                            <td>
                                                                 {!! Form::label('page_position', 'Op welke volgorde staat deze sectie ?') !!} 
                                                                 {!! Form::select('page_position', $data['page_positions'], null, ['class' => 'form-control']); !!} 
-
                                                            </td>
-
                                                         </tr> 
-                                                       
                                                     </thead>    
 
                                                                                                         
@@ -69,15 +70,12 @@
                                                     </div>
                                                 {!! Form::close() !!}
                                             </div>
-                                        </div>
-                                       
+                                        </div>     
                                     </div>
                                 </div>
                             </div>
-                           
                         </div>
                     </div>
-
                 </div> <!-- End row -->
                 
                    <div class="row">

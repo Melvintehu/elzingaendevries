@@ -13,7 +13,6 @@
 
 			<div class="col-lg-4 
 						space-inside-sides-md 
-						text-inject
 						limit-width-xs
 						all-col-centered
 			">
@@ -22,8 +21,9 @@
 					
 					<div class="col-lg-12 space-inside-sm">
 						
-						<h2 class="text-center">@if(isset($data['sections'][1])) {{$data['sections'][1]->title}}  @endif</h2>
-
+						<h2 class="text-center">
+						<?php $section->render('title', 1, $data); ?>
+						</h2>
 					</div>
 
 				</div>
@@ -56,8 +56,9 @@
 
 							">
 								
-								<p  class="font-xs text-color-dark">@if(isset($data['sections'][1])) {{$data['sections'][1]->body}}  @endif</p>
-
+								<p class="font-xs text-color-dark" text-inject>
+									<?php $section->render('body', 1, $data); ?>
+								</p>
 							</div>
 
 						</div>
@@ -70,7 +71,6 @@
 
 			<div class="col-lg-4 
 						space-inside-sides-md 
-						text-inject
 						limit-width-xs
 						all-col-centered
 			">
@@ -81,7 +81,9 @@
 					
 					<div class="col-lg-12 space-inside-sm">
 						
-						<h2 class="text-center">@if(isset($data['sections'][2])) {{$data['sections'][2]->title}}  @endif</h2>
+						<h2 class="text-center">
+							<?php $section->render('title', 2, $data); ?>
+						</h2>
 
 					</div>
 
@@ -112,7 +114,9 @@
 
 						">
 							
-							<p  class="font-xs text-color-dark	">@if(isset($data['sections'][2])) {{$data['sections'][2]->body}}  @endif</p>
+							<p  class="font-xs text-color-dark" text-inject>
+								<?php $section->render('body', 2, $data); ?>
+							</p>
 
 						</div>
 
@@ -126,7 +130,6 @@
 
 			<div class="col-lg-4 
 						space-inside-sides-md 
-						text-inject
 						limit-width-xs
 						all-col-centered
 			">
@@ -135,7 +138,9 @@
 					
 					<div class="col-lg-12 space-inside-sm">
 						
-						<h2 class="text-center">@if(isset($data['sections'][3])) {{$data['sections'][3]->title}}  @endif</h2>
+						<h2 class="text-center">
+							<?php $section->render('title', 3, $data); ?>
+						</h2>
 
 					</div>
 
@@ -166,7 +171,9 @@
  
 						">
 							
-							<p class="font-xs text-color-dark">@if(isset($data['sections'][3])) {{$data['sections'][3]->body}}  @endif</p>
+							<p class="font-xs text-color-dark" text-inject>
+								<?php $section->render('body', 3, $data); ?>
+							</p>
 
 						</div>
 

@@ -10,8 +10,7 @@
 		<div class="row">
 			
 			<div class="col-lg-12 space-outside-down-md">
-				
-
+	
 				<h1 class="text-color-main"> @if(isset($data['sections'][1])){{ $data['sections'][1]->title }}  @endif </h1>
 
 			</div>

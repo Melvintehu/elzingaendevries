@@ -12,6 +12,22 @@
 */
 
 
+
+// testen van nieuwe functies
+
+use App\Classes\FileManipulator\FileManipulator;
+
+Route::get('/test', function(){
+	$file = base_path() .'/app/Templates/Section/basic-section-with-photo.html';
+	$fileManipulator = new FileManipulator($file);
+	$fileManipulator->insertAt( 5 ,'<section class="pikkestijn"> Pikkenstijntje </section> ');
+	// $fileManipulator->replace('pikkestijn', 'we hebben dit vervangen');
+	// TODO : vervangt een hele line, moet alleen de search vervangen;!
+	// dd($lines);
+	// echo $fileManipulator->contentByLineNumber(3);
+});
+
+
 Route::get('/', function () {
     return view('pages.underconstruction.index');
 });

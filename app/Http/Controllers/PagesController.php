@@ -19,22 +19,20 @@ use App\Discipline;
 
 class PagesController extends Controller
 {
+	public function homepage()
+	{
+		$data = [
+			'sections' => $this->getSections('homepage'),
 
-	
+		];
 
-   	public function homepage()
-   	{
-   		$data = [
-   			'sections' => $this->getSections('homepage'),
-   		];
+		$section = new Section;
 
-   		return view('pages.homepage', compact('data'));
-   	}
+		return view('pages.homepage', compact('data', 'section'));
+	}
 
    	public function projecten($filter = "")
    	{
-   		
-   	
    		$data = [
    			'sections' => $this->getSections('projecten'),
    			'projects' => $this->getProjects($filter),
@@ -118,7 +116,7 @@ class PagesController extends Controller
 	// protected methods
 
 
-	protected function getProjects($filters)
+	protected function getProjects($discipline)
 	{	
       
 
