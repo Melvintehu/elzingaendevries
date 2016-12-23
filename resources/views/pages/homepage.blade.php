@@ -249,9 +249,32 @@
 		</div>
 
 	</section>
+	<section class="text-inject container ">
+		
+		<div class="row">
+			
+			<div class="col-lg-12">
+				
+				<h1 class="text-color-secondary"> <?php $section->render('title', 4, $data); ?></h1>
+			</div>
+
+			<div class="col-lg-8 space-outside-up-md space-outside-down-lg">
+					
+				<p class="text-color-dark font-sm">
+					
+				<?php $section->render('body', 4, $data); ?>
+
+				</p>
+
+			</div>
+
+		</div>
+
+	</section>
 
 
-	<!-- projecten -->
+<!-- 
+	
 	<section class="container space-outside-down-md">
 
 		<div class="row">
@@ -350,5 +373,5 @@
 
 	</section>
 
-
+ -->
 @stop

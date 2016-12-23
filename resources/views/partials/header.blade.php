@@ -23,8 +23,8 @@
 		      <ul class="nav navbar-nav">
 		      	<li> <img style="width: 30px;position:relative; top: 12px; right: 20px;" src="/images/logo-elzingaendevries.png"> </li>
 				<li class="{{ Request::path() == '/' ? 'active' : '' }}"><a href="/">Home</a></li>
-				<li class="{{ Request::path() == 'over-ons' ? 'active' : '' }}"><a href="/over-ons">Over ons</a></li>
-				<li class="{{ Request::path() == 'projecten' ? 'active' : '' }}"><a href="/projecten"> Projecten </a></li>
+				<!-- <li class="{{ Request::path() == 'over-ons' ? 'active' : '' }}"><a href="/over-ons">Over ons</a></li> -->
+				<!-- <li class="{{ Request::path() == 'projecten' ? 'active' : '' }}"><a href="/projecten"> Projecten </a></li> -->
 				<li class="{{ Request::path() == 'betimmering-interieur' ? 'active' : '' }}"><a href="/betimmering-interieur">Interieur</a></li>
 				<li class="{{ Request::path() == 'betimmering-exterieur' ? 'active' : '' }}"><a href="/betimmering-exterieur">Exterieur</a></li>
 				<li class="{{ Request::path() == 'betimmering-schepen' ? 'active' : '' }}"><a href="/betimmering-schepen">Schepen</a></li>

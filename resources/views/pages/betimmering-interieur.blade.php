@@ -18,7 +18,7 @@
 		</div>
 	</section>
 	<!-- project overzicht -->
-	<section class="container">
+<!-- 	<section class="container">
 		@include('pages.partials.project-overzicht-section', $data)
 		<div class="row">
 				<div class="col-lg-12 text-center space-outside-down-lg space-outside-up-md">
@@ -37,5 +37,5 @@
 			</div>
 		</div>
 	</section>
-	@include('pages.partials.contact-link-section')
+ -->	@include('pages.partials.contact-link-section')
 @stop
