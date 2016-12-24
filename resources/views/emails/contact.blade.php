@@ -17,6 +17,6 @@
 
         <p>{{ $bericht }}</p>
 
-    @include('beautymail::templates.sunny.contentEnd')
+	    @include('beautymail::templates.sunny.contentEnd')
 
 @stop

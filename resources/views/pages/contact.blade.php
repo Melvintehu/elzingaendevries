@@ -1,14 +1,14 @@
 @extends('master')
 @section('content')
 	{!! Breadcrumbs::render('contact') !!}
-	<section class="text-inject container ">
+	<section class=" container ">
 		<div class="row">
 			<div class="col-lg-12 space-outside-down-md">
-				<h1 class="text-color-main"> @if(isset($data['sections'][1])){{ $data['sections'][1]->title }}  @endif </h1>
+				<h1 class="text-color-main"> <?php $section->render('title', 1, $data); ?>  </h1>
 			</div>
 			<div class="col-lg-7 space-outside-down-lg">	
-				<p class="text-color-dark">
-				@if(isset($data['sections'][1])){!! nl2br( $data['sections'][1]->body )!!}  @endif
+				<p class="text-color-dark" text-inject>
+				<?php $section->render('body', 1, $data); ?>
 				</p>
 			</div>
 			<div class="col-lg-5 bg-accent">
@@ -21,10 +21,11 @@
 								 text-bold
 								 space-outside-right-xs
 								 border-curved
-								 ">  
-								 Adres 
+
+								 " text-inject>  
+								 <?php $section->render('title', 2, $data); ?>
 					</span> 
-					Metaallaan 75 
+					<?php $section->render('body', 2, $data); ?>
 				</p>
 				<p class="space-outside-xs ">  
 					<span class="bg-secondary 
@@ -35,10 +36,10 @@
 								 text-bold
 								 space-outside-right-xs
 								 border-curved
-								 ">  
-								 Postcode 
+								 " text-inject>  
+								 <?php $section->render('title', 3, $data); ?>
 					</span> 
-					9743 BP 
+					<?php $section->render('body', 3, $data); ?>
 				</p>
 
 				<p class="space-outside-xs ">  
@@ -50,10 +51,10 @@
 								 text-bold
 								 space-outside-right-xs
 								 border-curved
-								 ">  
-								 Telefoonnummer 
+								 " text-inject>  
+								 <?php $section->render('title', 4, $data); ?>
 					</span> 
-					06 30 63 23 1 
+					<?php $section->render('body', 4, $data); ?>
 				</p>
 
 				<p class="space-outside-xs ">  
@@ -65,10 +66,10 @@
 								 text-bold
 								 border-curved
 								 space-outside-right-xs
-								 ">  
-								 Emailadres
+								 " text-inject>  
+								 <?php $section->render('title', 5, $data); ?>
 					</span> 
-					info@elzingaendevries.nl 
+					<?php $section->render('body', 5, $data); ?>
 				</p>
 			</div>
 			<div class="col-lg-12 space-outside-down-lg reset-padding">

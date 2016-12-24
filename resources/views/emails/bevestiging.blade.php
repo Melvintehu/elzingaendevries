@@ -13,7 +13,7 @@
 
         <p>Met vriendelijke groet,</p>
 
-        <p>Team Mentor4you</p>
+        <p>Elzinga en de Vries</p>
 
     @include('beautymail::templates.sunny.contentEnd')
 

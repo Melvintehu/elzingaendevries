@@ -10,6 +10,7 @@ class MailController extends Controller
 {
    public function contactMail(Request $request)
    {
+
    		$name = $request->input('naam');
 	    $email = $request->input('emailadres');
 
@@ -20,8 +21,8 @@ class MailController extends Controller
 	        $beautymail->send('emails.contact', ['telefoonnummer' => $telefoonnummer, 'bericht' => $bericht], function($message) use ($name, $email)
 	        {
 	            $message
-	                ->from($email, $name)
-	                ->to('melvindrachten@hotmail.com', 'Mentor4you')
+	                ->from('info@elzingaendevries.nl', $name)
+	                ->to('melvindrachten@hotmail.com', 'Test')
 	                ->subject('Contactbericht van ' . $name);
 	        });
 
@@ -36,8 +37,7 @@ class MailController extends Controller
           });
 
           $request->session()->flash('succeed', 'Uw email is verzonden!');
-
-	        return redirect('/contact');
+        return redirect('/contact');
    }
 
 

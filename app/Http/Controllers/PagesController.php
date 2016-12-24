@@ -41,8 +41,8 @@ class PagesController extends Controller
 
    		];
 
-
-   		return view('pages.projecten', compact('data'));
+		$section = new Section;
+   		return view('pages.projecten', compact('data', 'section'));
    	}
 
 
@@ -62,8 +62,8 @@ class PagesController extends Controller
    		$data = [
    			'sections' => $this->getSections('contact'),
    		];
-
-   		return view('pages.contact', compact('data'));
+   		$section = new Section;
+   		return view('pages.contact', compact('data', 'section'));
    	}
 
 	public function overOns()

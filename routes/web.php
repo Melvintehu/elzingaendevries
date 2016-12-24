@@ -26,7 +26,7 @@ Route::get('/projecten', 'PagesController@projecten');
 Route::get('/projecten/{filter}', 'PagesController@projecten');
 Route::get('/project/{id}/{projectName}', 'PagesController@project');
 
-Route::post('/contact', 'MailController@contactMail');
+Route::post('/mail/contact-mail', 'MailController@contactMail');
 
 Route::get('/over-ons', 'PagesController@overOns');
 Route::get('/contact', 'PagesController@contact');
