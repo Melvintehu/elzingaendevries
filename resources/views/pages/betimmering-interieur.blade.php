@@ -2,7 +2,7 @@
 
 @section('content')
 	{!! Breadcrumbs::render('interieur') !!}	
-	<section class="text-inject container xs-space-inside-sides-md">
+	<section class="text-inject container xs-space-inside-sides-md wow fadeInDown">
 		<div class="row">
 			<div class="col-lg-12 space-outside-down-md">
 				<h1 class="text-color-secondary xs-font-md sm-font-lg "> @if(isset($data['sections'][1])){{ $data['sections'][1]->title }}  @endif </h1>

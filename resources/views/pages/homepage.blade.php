@@ -6,6 +6,7 @@
 	<section class="container 
 				 	space-outside-down-md 
 				 	space-outside-up-lg
+				 	wow fadeInDown
 	">
 
 		<div class="row all-row-centered"> 
@@ -208,6 +209,7 @@
 					space-inside-md 
 					space-outside-lg 
 					shadow-xs
+					wow fadeInDown
 	">
 
 		<div class="container text-center">

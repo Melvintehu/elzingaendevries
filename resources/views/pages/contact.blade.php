@@ -1,7 +1,9 @@
 @extends('master')
 @section('content')
 	{!! Breadcrumbs::render('contact') !!}
-	<section class=" container ">
+
+	<section class="text-inject container wow fadeInDown">
+
 		<div class="row">
 			<div class="col-lg-12 space-outside-down-md">
 				<h1 class="text-color-main"> <?php $section->render('title', 1, $data); ?>  </h1>
