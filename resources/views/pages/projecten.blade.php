@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	Projecten
+@stop
+
 @section('content')
 	<section class="space-inside-sides-xl
 					bg-secondary

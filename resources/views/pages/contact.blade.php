@@ -1,4 +1,9 @@
 @extends('master')
+
+@section('title')
+	Contact
+@stop
+
 @section('content')
 	{!! Breadcrumbs::render('contact') !!}
 

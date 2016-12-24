@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	Schepen
+@stop
+
 @section('content')	
 	{!! Breadcrumbs::render('schepen') !!}
 	<section class="text-inject container xs-space-inside-sides-md wow fadeInDown">

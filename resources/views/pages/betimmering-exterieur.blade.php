@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	Exterieur
+@stop
+
 @section('content')
 	{!! Breadcrumbs::render('exterieur') !!}
 	<section class="text-inject container xs-space-inside-sides-md wow fadeInDown">

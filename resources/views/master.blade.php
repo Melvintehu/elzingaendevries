@@ -4,7 +4,7 @@
 
     <head>
 
-        <title>Laravel</title>
+        <title>@yield('title') | Elzinga en de Vries betimmeringen</title>
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" rel="stylesheet">
 
