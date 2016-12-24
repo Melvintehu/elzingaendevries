@@ -1,4 +1,3 @@
-
 <div style="height:10px;" class="container-fluid bg-accent divider"></div>
 
 
@@ -21,7 +20,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		      	<li class='hidden-xs'> <img style="width: 30px;position:relative; top: 12px; right: 20px;" src="/images/logo-elzingaendevries.png"> </li>
+		      	<li class='hidden-xs hidden-sm'> <img style="width: 30px;position:relative; top: 12px; right: 20px;" src="/images/logo-elzingaendevries.png"> </li>
 				<li class="{{ Request::path() == '/' ? 'active' : '' }}"><a href="/">Home</a></li>
 				<!-- <li class="{{ Request::path() == 'over-ons' ? 'active' : '' }}"><a href="/over-ons">Over ons</a></li> -->
 				<!-- <li class="{{ Request::path() == 'projecten' ? 'active' : '' }}"><a href="/projecten"> Projecten </a></li> -->
