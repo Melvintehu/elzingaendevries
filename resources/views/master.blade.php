@@ -4,6 +4,8 @@
 
     <head>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>@yield('title') | Elzinga en de Vries betimmeringen</title>
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" rel="stylesheet">
